@@ -14,9 +14,13 @@ export class Reviews {
   getReviews(){
  
     if (this.data) {
+<<<<<<< HEAD
       console.log("Failing here");
       return Promise.resolve(this.data);
       
+=======
+      return Promise.resolve(this.data);
+>>>>>>> hiremeBranch
     }
  
     return new Promise(resolve => {

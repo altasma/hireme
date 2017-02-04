@@ -1,0 +1,40 @@
+<ion-header>
+ <ion-navbar transparent>
+  <ion-title>
+    These people can give  {{skill.name}}  service
+  </ion-title>
+  <!--<ion-buttons end>
+    <button ion-button icon-only (click)="getSkilledPersons()"><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>-->
+ </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+ 
+  <ion-list no-lines>
+ 
+    <ion-item-sliding *ngFor="let person of skilledPersons">
+ 
+      <ion-item (click)="requestService(person)">
+
+        <ion-avatar item-left>
+          <!-- will get the avator from db -->
+          <img src="https://api.adorable.io/avatars/75/{{person.name}}">
+        </ion-avatar>
+ 
+        <h2>{{person.name}}</h2>
+ 
+ 
+      </ion-item>
+
+       <ion-item-options>
+        <button ion-button color="primary" (click)="favorite(person)">
+          <ion-icon name="fav"></ion-icon>
+          Favorite
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
+</ion-content>

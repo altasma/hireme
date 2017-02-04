@@ -1,7 +1,11 @@
 <ion-header>
  <ion-navbar transparent>
   <ion-title>
+<<<<<<< HEAD
     Review King
+=======
+    Hireme
+>>>>>>> hiremeBranch
   </ion-title>
   <ion-buttons end>
     <button ion-button icon-only (click)="addReview()"><ion-icon name="add"></ion-icon></button>
@@ -15,7 +19,11 @@
  
     <ion-item-sliding *ngFor="let review of reviews">
  
+<<<<<<< HEAD
       <ion-item>
+=======
+      <ion-item (click)="deleteReview(review)">
+>>>>>>> hiremeBranch
  
         <ion-avatar item-left>
           <img src="https://api.adorable.io/avatars/75/{{review.title}}">

@@ -25,11 +25,30 @@ app.use(function(req, res, next) {
 });
  
 // Models
+<<<<<<< HEAD
 var Review = mongoose.model('users', {
     name: String,
     email: String,
     phone: Number,
     skill:String
+=======
+var Review = mongoose.model('Review', {
+    title: String,
+    description: String,
+    rating: Number
+});
+
+var Skill = mongoose.model('Skill', {
+    name: String,
+    description: String,
+});
+
+var SkilledPerson = mongoose.model('SkilledPerson', {
+    name: String,
+    phone: String,
+    rating: String,
+
+>>>>>>> hiremeBranch
 });
  
 // Routes
@@ -49,6 +68,42 @@ var Review = mongoose.model('users', {
             res.json(reviews); // return all reviews in JSON format
         });
     });
+<<<<<<< HEAD
+=======
+
+     // Get skills
+    app.get('/api/skills', function(req, res) {
+ 
+        console.log("fetching skills");
+ 
+        // use mongoose to get all reviews in the database
+        Skill.find(function(err, skills) {
+ 
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+ 
+            res.json(skills); // return all reviews in JSON format
+        });
+    });
+
+     // Get skilledPersons
+    app.get('/api/skilledPersons', function(req, res) {
+ 
+        console.log("fetching skilledPersons");
+ 
+        // use mongoose to get all skilledPersons in the database of a specific skill
+        SkilledPersons.find(function(err, skilledPersons) {
+ 
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+ 
+            res.json(skilledPersons); // return all reviews in JSON format
+        });
+    });
+ 
+>>>>>>> hiremeBranch
  
     // create review and send back all reviews after creation
     app.post('/api/reviews', function(req, res) {
@@ -57,10 +112,16 @@ var Review = mongoose.model('users', {
  
         // create a review, information comes from request from Ionic
         Review.create({
+<<<<<<< HEAD
             name : req.body.title,
             email : req.body.description,
             phone: req.body.rating,
             skill:reg.body.skill,
+=======
+            title : req.body.title,
+            description : req.body.description,
+            rating: req.body.rating,
+>>>>>>> hiremeBranch
             done : false
         }, function(err, review) {
             if (err)
@@ -84,8 +145,12 @@ var Review = mongoose.model('users', {
  
         });
     });
+<<<<<<< HEAD
  
  
 // listen (start app with node server.js) ======================================
+=======
+ // listen (start app with node server.js) ======================================
+>>>>>>> hiremeBranch
 app.listen(8080);
 console.log("App listening on port 8080");

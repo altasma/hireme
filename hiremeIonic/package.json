@@ -33,8 +33,13 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
+<<<<<<< HEAD
     "cordova-plugin-statusbar",
     "cordova-plugin-console",
+=======
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+>>>>>>> hiremeBranch
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
