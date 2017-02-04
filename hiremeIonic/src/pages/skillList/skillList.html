@@ -1,0 +1,43 @@
+<ion-header>
+ <ion-navbar transparent>
+  <ion-title>
+    Select the Service you need
+  </ion-title>
+  <!--<ion-buttons end>
+    <button ion-button icon-only (click)="getSkilledPersons()"><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>-->
+ </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+ 
+  <ion-list no-lines>
+ 
+    <ion-item-sliding *ngFor="let skill of skills">
+ 
+      <ion-item (click)="getSkilledPersons(skill)">
+
+        <ion-avatar item-left>
+          <!-- will get the avator from db -->
+          <img src="https://api.adorable.io/avatars/75/{{skill.title}}">
+        </ion-avatar>
+ 
+        <h2>{{skill.name}}</h2>
+ 
+        <!--<ion-icon *ngIf="review.rating < 50" danger name="sad"></ion-icon>
+        <ion-icon *ngIf="review.rating >= 50" secondary name="happy"></ion-icon> 
+        {{review.rating}}-->
+ 
+      </ion-item>
+
+       <ion-item-options>
+        <button ion-button color="primary" (click)="favorite(skill)">
+          <ion-icon name="fav"></ion-icon>
+          Favorite
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
+</ion-content>
